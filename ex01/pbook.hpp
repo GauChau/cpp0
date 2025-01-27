@@ -6,40 +6,15 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:47:42 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/01/27 15:38:05 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:38:53 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PBOOK_HPP
-#define PBOOK_hPP
-#include <iostream>
-#include <cctype>
-#include <string>
-
-class PhoneBook
-{
-	Contact array[8];
-
-	public :
-		std::string ADD(std::string);
-		std::string SEARCH(std::string);
-		void EXIT();
-};
-
-std::string PhoneBook::ADD(std::string)
-{
-
-};
-
-std::string PhoneBook::SEARCH(std::string)
-{
-
-};
-
-void PhoneBook::EXIT(void)
-{
-
-};
+# define PBOOK_HPP
+# include <iostream>
+# include <cctype>
+# include <string>
 
 class Contact
 {
@@ -62,5 +37,28 @@ class Contact
 	void w_pnumber(std::string);
 	void w_secret(std::string);
 };
+
+
+
+class PhoneBook
+{
+	private:
+		Contact array[8];
+		int		i;
+		int		total;
+		std::string aligner(std::string);
+
+	public :
+		void init();
+		void ADD();
+		void SEARCH(std::string);
+		void EXIT();
+};
+
+std::string get_fname(void);
+std::string get_lname(void);
+std::string get_nickname(void);
+std::string get_pnumber(void);
+std::string get_secret(void);
 
 #endif
