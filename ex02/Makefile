@@ -1,5 +1,5 @@
 OUT = ex02
-SRC = account.cpp
+SRC = account.cpp tests.cpp
 SRC_OBJS = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra
 CC = c++
