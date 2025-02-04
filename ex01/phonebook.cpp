@@ -6,7 +6,7 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:26:10 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/01/27 18:02:37 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:24:32 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,30 @@ void PhoneBook::init(void)
 	this->total = 0;
 }
 
-std::string aligner(std::string src)
+void PhoneBook::aligner(std::string src)
 {
-	int len;
 	std::string line;
 
-	line = src;
+	std::cout << "|";
+	if (src.length() > 10)
+	{
+		std::cout << src.substr(0, 9) << ".";
+	}
+	else if(src.length() <= 10)
+	{
+		line.insert(0, 10 - src.length(), ' ');
+		std::cout << line << src;
+	}
+}
 
-	if (line.length() > 10)
-	{
-		while (line.length() > 9)
-		{
-			line.pop_back();
-		}
-		line.insert(9, 1, '.');
-	}
-	else if(line.length() < 10)
-	{
-		line.insert(0, 10 - line.length(), ' ');
-	}
-	return (line);
+void PhoneBook::display(int id)
+{
+	std::cout << "ID: " << std::to_string(id) << "\n"
+	<< "firstname: " << this->array[id].get_fname() << "\n"
+	<< "last name: " << this->array[id].get_lname() << "\n"
+	<< "nickname: " << this->array[id].get_nickname() << "\n"
+	<< "phone number: " << this->array[id].get_pnumber() << "\n"
+	<< "darkest secret: " << this->array[id].get_secret() << "\n";
 }
 
 void PhoneBook::ADD(void)
@@ -51,56 +55,110 @@ void PhoneBook::ADD(void)
 
 	std::cout << "ADD CONTACT\nfirstname: ";
 	std::getline(std::cin, temp);
-	this->array[i].w_fname(temp);
+	this->array[this->i].w_fname(temp);
 
 	std::cout << "lastname: ";
 	std::getline(std::cin, temp);
-	this->array[i].w_lname(temp);
+	this->array[this->i].w_lname(temp);
 
 	std::cout << "nickname: ";
 	std::getline(std::cin, temp);
-	this->array[i].w_nickname(temp);
+	this->array[this->i].w_nickname(temp);
 
-	std::cout << "pnumber: ";
+	;std::cout << "pnumber: ";
 	std::getline(std::cin, temp);
-	this->array[i].w_pnumber(temp);
+	this->array[this->i].w_pnumber(temp);
 
 	std::cout << "secret: ";
 	std::getline(std::cin, temp);
-	this->array[i].w_secret(temp);
+	this->array[this->i].w_secret(temp);
 
 	this->i++;
 	this->total++;
 
 }
 
-void PhoneBook::SEARCH(std::string)
+void PhoneBook::SEARCH(void)
 {
 	int range;
+	std::string id;
 
 	if(this->total < 8)
-		range = i+1;
+		range = this->i;
 	else
 		range = 8;
-	std::cout << "|     index|first name| last name|  nickname|\n";
-	for(int i = 0; i < range; i++)
+	std::cout << "|ID|first name| last name|  nickname|   pnumber|\n";
+	std::cout << "------------------------------------------------\n";
+	// std::cout << "___________________________________________________________\n";
+	for(int j = 0; j < range; j++)
 	{
-
+		std::cout << "| " << std::to_string(j);
+		aligner(array[j].get_fname());
+		aligner(array[j].get_lname());
+		aligner(array[j].get_nickname());
+		aligner(array[j].get_pnumber());
+		std::cout << "|\n";
 	}
-
+	std::cout << "CHOOSE ID TO ACCESS TO: ";
+	std::cin >> id;
+	if (id.length() == 1
+		&& (*id.cbegin() >= '0' && *id.cbegin() <= '7' && (*id.cbegin() -'0') <= range -1))
+	{
+		display(*id.cbegin() - '0');
+	}
+	else if (id.length() == 1
+		&& (*id.cbegin() >= '0' && *id.cbegin() <= '7'))
+	{
+		std::cerr << "CONTACT NOT SET\n";
+	}
+	else
+	{
+		std::cerr << "WRONG ID, NUMBERS FROM 0 TO 7 ONLY.\n";
+	}
 
 }
 
-void PhoneBook::EXIT(void)
+int PhoneBook::RUNNER(std::string prompt)
 {
-
+	if (prompt.compare("SEARCH") == 0)
+	{
+		this->SEARCH();
+		return (0);
+	}
+	else if (prompt.compare("ADD") == 0)
+	{
+		this->ADD();
+		return (0);
+	}
+	else if (prompt.compare("EXIT") == 0)
+	{
+		return (-1);
+	}
+	else
+	{
+		std::cerr << "Wrong entry. Valid commands are: ADD, SEARCH and EXIT.\n";
+		return (1);
+	}
+	return (1);
 }
 
 int	main()
 {
 	PhoneBook joe;
+	std::string line;
 
 	joe.init();
-	joe.ADD();
+	std::cout << "My Awesome Phonebook\n";
+	std::cout << "Type ADD, SEARCH or EXIT\n";
+	while (1)
+	{
+
+		std::getline(std::cin, line);
+		if (line.length() > 0)
+		{
+			if(joe.RUNNER(line) == -1)
+				break ;
+		}
+	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:18:53 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/01/27 17:24:28 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:35:56 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void Contact::w_pnumber(std::string val)
 }
 void Contact::w_secret(std::string val)
 {
-	this->fname = val;
+	this->secret = val;
 }

@@ -1,7 +1,7 @@
-OUT = phonbk
-SRC = phonebook.cpp contact.cpp
+OUT = ex02
+SRC = account.cpp
 SRC_OBJS = $(SRC:.cpp=.o)
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 CC = c++
 
 all: $(OUT)

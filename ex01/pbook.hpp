@@ -6,15 +6,15 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:47:42 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/01/27 17:38:53 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:27:39 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PBOOK_HPP
 # define PBOOK_HPP
-# include <iostream>
-# include <cctype>
-# include <string>
+#include <cstdlib>
+#include <string>
+#include <iostream>
 
 class Contact
 {
@@ -46,19 +46,20 @@ class PhoneBook
 		Contact array[8];
 		int		i;
 		int		total;
-		std::string aligner(std::string);
+		void aligner(std::string);
 
 	public :
 		void init();
 		void ADD();
-		void SEARCH(std::string);
-		void EXIT();
+		void SEARCH();
+		void display(int id);
+		int RUNNER(std::string);
 };
 
-std::string get_fname(void);
-std::string get_lname(void);
-std::string get_nickname(void);
-std::string get_pnumber(void);
-std::string get_secret(void);
+// std::string get_fname(void);
+// std::string get_lname(void);
+// std::string get_nickname(void);
+// std::string get_pnumber(void);
+// std::string get_secret(void);
 
 #endif
