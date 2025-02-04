@@ -1,16 +1,17 @@
 OUT = megaphone
+
 SRC = megaphone.cpp
 SRC_OBJS = $(SRC:.cpp=.o)
-FLAGS = -Wall -Wextra -Werror -g
-CC = c++ -std=c++98
+FLAGS = -Wall -Wextra -Werror -g -std=c++98
+CPP = c++ 
 
-all: $(LIBFT) $(OUT)
+all: $(OUT)
 
 $(OUT): $(SRC_OBJS)
-	$(CC) $(FLAGS) $(SRC_OBJS) $(OUT)
+	$(CPP) $(FLAGS) $(SRC_OBJS) -o $(OUT)
 
 $(SRC_OBJS): %.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(SRC_OBJS)

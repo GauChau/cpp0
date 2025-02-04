@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gautierchauvot <gautierchauvot@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:26:10 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/02/04 15:24:32 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:34:34 by gautierchau      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,6 @@ int	main()
 	std::cout << "Type ADD, SEARCH or EXIT\n";
 	while (1)
 	{
-
 		std::getline(std::cin, line);
 		if (line.length() > 0)
 		{

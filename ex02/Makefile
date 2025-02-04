@@ -1,7 +1,7 @@
 OUT = ex02
 SRC = account.cpp tests.cpp
 SRC_OBJS = $(SRC:.cpp=.o)
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -arch arm64
 CC = c++
 
 all: $(OUT)
