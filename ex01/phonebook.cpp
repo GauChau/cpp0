@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gautierchauvot <gautierchauvot@student.    +#+  +:+       +#+        */
+/*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:26:10 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/02/04 20:34:34 by gautierchau      ###   ########.fr       */
+/*   Updated: 2025/02/05 17:28:33 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,8 @@ int	main()
 	while (1)
 	{
 		std::getline(std::cin, line);
+		if(!std::cin)
+			return(0);
 		if (line.length() > 0)
 		{
 			if(joe.RUNNER(line) == -1)
