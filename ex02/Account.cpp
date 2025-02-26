@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gautierchauvot <gautierchauvot@student.    +#+  +:+       +#+        */
+/*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:19:46 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/02/04 22:42:34 by gautierchau      ###   ########.fr       */
+/*   Updated: 2025/02/26 14:19:13 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

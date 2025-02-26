@@ -6,7 +6,7 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:26:10 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/02/24 17:05:14 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/26 14:08:00 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,50 @@ void PhoneBook::ADD(void)
 	if(this->i > 7)
 		this->i = 0;
 
-	std::cout << "ADD CONTACT\nfirstname: ";
-	std::getline(std::cin, temp);
+	std::cout << "ADD CONTACT. EMPTY FIELD NOT ALLOWED\n";
+	do
+	{
+		std::cout << "firstname: ";
+		if(!std::getline(std::cin, temp))
+			return ;
+	}
+	while (temp.length() == 0);
 	this->array[this->i].w_fname(temp);
 
-	std::cout << "lastname: ";
-	std::getline(std::cin, temp);
+	do
+	{
+		std::cout << "lastname: ";
+		if(!std::getline(std::cin, temp))
+			return ;
+	}
+	while (temp.length() == 0);
 	this->array[this->i].w_lname(temp);
 
-	std::cout << "nickname: ";
-	std::getline(std::cin, temp);
+	do
+	{
+		std::cout << "nickname: ";
+		if(!std::getline(std::cin, temp))
+			return ;
+	}
+	while (temp.length() == 0);
 	this->array[this->i].w_nickname(temp);
 
-	std::cout << "pnumber: ";
-	std::getline(std::cin, temp);
+	do
+	{
+		std::cout << "pnumber: ";
+		if(!std::getline(std::cin, temp))
+			return ;
+	}
+	while (temp.length() == 0);
 	this->array[this->i].w_pnumber(temp);
 
-	std::cout << "secret: ";
-	std::getline(std::cin, temp);
+	do
+	{
+		std::cout << "secret: ";
+		if(!std::getline(std::cin, temp))
+			return ;
+	}
+	while (temp.length() == 0);
 	this->array[this->i].w_secret(temp);
 
 	this->i++;
