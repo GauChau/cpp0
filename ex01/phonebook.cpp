@@ -6,7 +6,7 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:26:10 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/02/05 17:28:33 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:05:14 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void PhoneBook::ADD(void)
 	std::getline(std::cin, temp);
 	this->array[this->i].w_nickname(temp);
 
-	;std::cout << "pnumber: ";
+	std::cout << "pnumber: ";
 	std::getline(std::cin, temp);
 	this->array[this->i].w_pnumber(temp);
 

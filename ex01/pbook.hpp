@@ -6,7 +6,7 @@
 /*   By: gchauvot <gchauvot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:47:42 by gchauvot          #+#    #+#             */
-/*   Updated: 2025/02/04 14:27:39 by gchauvot         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:03:59 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class Contact
 {
+	private:
 	std::string fname;
 	std::string lname;
 	std::string nickname;
